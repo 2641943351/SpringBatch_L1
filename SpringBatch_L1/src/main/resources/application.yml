@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    username: ZZOL
+    password: 123456
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
+    driver-class-name: oracle.jdbc.OracleDriver
+
+    # 让系统根据内置的sql文件，创建batch所需的表
+  sql:
+    init:
+      # batch所需表的sql（存在jar中）
+      schema-locations: classpath:org/springframework/batch/core/schema-oracle10g.sql
+      # 总是执行（第一次启动项目用一次）
+      #mode: always
+      # 总是不执行
+      mode: never

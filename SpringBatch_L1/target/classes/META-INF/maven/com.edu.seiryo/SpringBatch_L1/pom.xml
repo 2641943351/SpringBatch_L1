@@ -3,4 +3,48 @@
   <groupId>com.edu.seiryo</groupId>
   <artifactId>SpringBatch_L1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  	<!-- 导入父级标签 -->
+	<parent>
+    	<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-parent</artifactId>
+    	<version>2.7.3</version>
+    	<relativePath/>
+	</parent>
+	<dependencies>
+	<!-- 导入SpringBatch场景 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-batch</artifactId>
+    </dependency>
+    <!-- 导入lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+
+	<!--
+		内存版数据库：
+		引入H2内存数据库，让Spring Batch可以存储和管理批处理运行信息。
+		Spring Batch运行时，要创建一系列登记数据的表，
+		但使用h2后，表是创建在内存中的，而不是数据库，程序关闭后就清空
+	-->
+    <!-- <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    -->
+    <!-- Oracle数据库 -->
+    <dependency>
+        <groupId>com.oracle.database.jdbc</groupId>
+        <artifactId>ojdbc6</artifactId>
+        <version>11.2.0.4</version>
+    </dependency>
+	<!-- 导入测试包 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+    </dependency>
+
+</dependencies>
 </project>
